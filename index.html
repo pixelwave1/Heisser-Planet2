@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Heißer Planet – schrumpfende Rechte</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loginScreen" class="fadeIn">
+  <h1>🌍 Heißer Planet – schrumpfende Rechte</h1>
+  <p>Dein Lernprojekt zu Klimawandel & Menschenrechten</p>
+  <input type="text" id="usernameInput" placeholder="Dein Name">
+  <button onclick="startApp()">Start</button>
+</div>
+
+<div id="app" class="hidden">
+
+<header>
+  <h2 id="welcomeText"></h2>
+
+  <div class="controls">
+    <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
+    <select id="themeSelect" onchange="changeTheme()">
+      <option value="blue">🔵 Blau</option>
+      <option value="green">🟢 Grün</option>
+      <option value="red">🔴 Rot</option>
+    </select>
+  </div>
+
+  <nav>
+    <button onclick="scrollToSection('klima')">🌡️ Klima & Rechte</button>
+    <button onclick="scrollToSection('wasser')">💧 Wasser</button>
+    <button onclick="scrollToSection('wohnen')">🏠 Wohnen</button>
+    <button onclick="scrollToSection('gesundheit')">❤️ Gesundheit</button>
+    <button onclick="scrollToSection('handeln')">🌱 Was tun?</button>
+    <button onclick="scrollToSection('spiel')">🎮 Spiel</button>
+  </nav>
+</header>
+
+<section id="klima" class="section slideUp">
+<h2>🌡️ Klimawandel & Menschenrechte</h2>
+<p>Der Klimawandel bedroht wichtige Menschenrechte: Wasser, Wohnen, Gesundheit und Leben.</p>
+</section>
+
+<section id="wasser" class="section slideUp">
+<h2>💧 Recht auf Wasser</h2>
+<p>Dürre und Überschwemmungen zerstören Wasserquellen. Millionen Menschen haben keinen Zugang zu sauberem Trinkwasser.</p>
+</section>
+
+<section id="wohnen" class="section slideUp">
+<h2>🏠 Recht auf Wohnen</h2>
+<p>Stürme, Brände und steigender Meeresspiegel zerstören Häuser und machen Menschen obdachlos.</p>
+</section>
+
+<section id="gesundheit" class="section slideUp">
+<h2>❤️ Recht auf Gesundheit</h2>
+<p>Hitze, Krankheiten und Luftverschmutzung gefährden die Gesundheit vieler Menschen.</p>
+</section>
+
+<section id="handeln" class="section slideUp">
+<h2>🌱 Was kannst du tun?</h2>
+<ul>
+<li>Weniger Plastik benutzen</li>
+<li>Öffentliche Verkehrsmittel nutzen</li>
+<li>Energie sparen</li>
+<li>Andere informieren</li>
+</ul>
+</section>
+
+<section id="spiel" class="section slideUp">
+<h2>🎮 Mini-Spiel: Richtig oder Falsch</h2>
+
+<select id="levelSelect">
+  <option value="leicht">Leicht</option>
+  <option value="mittel">Mittel</option>
+  <option value="schwer">Schwer</option>
+</select>
+
+<button onclick="startGame()">Spiel starten</button>
+
+<p id="question"></p>
+<p>⏱️ Zeit: <span id="timer">10</span></p>
+<p>⭐ Punkte: <span id="score">0</span></p>
+
+<button onclick="answer(true)">✔ Richtig</button>
+<button onclick="answer(false)">❌ Falsch</button>
+
+<button onclick="newRound()">Neue Runde starten</button>
+
+<h3>🏆 Highscores</h3>
+<ul id="highscoreList"></ul>
+</section>
+
+<section class="section slideUp">
+<h2>📊 Umfrage</h2>
+<p>Würdest du dein Verhalten fürs Klima ändern?</p>
+<button onclick="vote('Ja')">Ja</button>
+<button onclick="vote('Vielleicht')">Vielleicht</button>
+<button onclick="vote('Nein')">Nein</button>
+<p id="voteResult"></p>
+</section>
+
+<section class="section slideUp">
+<h2>📱 QR-Code zur Webseite</h2>
+<img id="qrCode">
+</section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
