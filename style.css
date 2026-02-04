@@ -1,0 +1,92 @@
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg: #e3f2fd;
+  --text: #000;
+  --main: #2196f3;
+}
+
+.dark {
+  --bg: #121212;
+  --text: #fff;
+}
+
+.blue { --main: #2196f3; }
+.green { --main: #4caf50; }
+.red { --main: #f44336; }
+
+header {
+  background: var(--main);
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+
+nav button, .controls button, select, button {
+  margin:5px;
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.section {
+  padding:40px;
+  margin:20px;
+  background:white;
+  border-radius:15px;
+}
+
+.dark .section {
+  background:#1e1e1e;
+}
+
+.hidden {
+  display:none;
+}
+
+.fadeIn {
+  animation: fadeIn 2s;
+}
+
+.slideUp {
+  animation: slideUp 1s;
+}
+
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+@keyframes slideUp {
+  from {transform:translateY(40px); opacity:0;}
+  to {transform:translateY(0); opacity:1;}
+}
+
+#loginScreen {
+  text-align:center;
+  margin-top:100px;
+}
+
+input {
+  padding:10px;
+  border-radius:10px;
+}
+
+img {
+  width:200px;
+}
+
+@media (max-width:600px){
+  nav button {
+    display:block;
+    width:100%;
+  }
+}
